@@ -8,6 +8,13 @@ pipeline {
                 sh 'sudo docker push 010762572680.dkr.ecr.ap-south-1.amazonaws.com/kubernates'
             }
         }
+             
+        stage ('Deployment') {
+            steps {
+                echo "Deployment"
+                sh 'kubectl apply -f demo.yaml'
+            }
+        }
         
 }
   
