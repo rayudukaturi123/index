@@ -13,6 +13,7 @@ pipeline {
             steps {
                 echo "Deployment"
                 sh 'kubectl apply -f demo.yaml'
+                sh 'kubectl apply -f demo-svc.yaml'
             }
         }
         
