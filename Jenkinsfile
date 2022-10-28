@@ -14,6 +14,7 @@ pipeline {
                 echo "Deployment"
                 sh 'kubectl apply -f demo.yaml'
                 sh 'kubectl apply -f demo-svc.yaml'
+                sh 'kubectl rollout restart deployment/httpd-deployment'
             }
         }
         
